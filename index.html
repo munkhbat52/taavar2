@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Тоо олох тоглоом</title>
+	<script>
+	var number = Math.floor(Math.random() * 100 + 1);
+	function checkGuess() {
+		var guess = document.getElementById("guess").value;
+		var msg = "";
+		if (guess > number)
+			msg = guess + " Санасан тооноос их байна. Дахин оруулна уу?";
+		else if (guess < number)
+			msg = guess + " Санасан тооноос бага байна. Дахин оруулна уу?";
+		else 
+			msg = guess + " Мөн байна. Та хожлоо!";
+		var output = document.getElementById("output").innerHTML = msg;
+		document.getElementById("guess").focus();
+		document.getElementById("guess").select();
+	}
+	</script>
+</head>
+<body>
+	<h1>Санасан тоог олцгооё</h1>
+	<form onsubmit="checkGuess(); return false;">  <!-- тоогоо оруулаад Enter дархад-->
+		1 - 100-ийн хооронд тоо оруулж санасан тоог олоорой.
+		<input type = "text" id = "guess" size="5">
+		<button type = "button" onclick= "checkGuess() "> Тоог шалга </button>
+	</form>
+	<h3 id = "output"> Тоогоо оруулаад Шалгах товчийг дарна уу? </h3>
+</body>
+</html>
